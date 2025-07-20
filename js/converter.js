@@ -230,9 +230,15 @@ try {
 } catch (error) {
   pomilka = { poymalo: "catch" };
   alert(console.log(error,));
+  alert(console.dir(error,));
   alert(console.log(error,pomilka));
   // alert(error);
   // prompt("catch");
+}
+finally {
+  prompt("finally AFTER RETURN");
+  // String!=Number ? alert("true") : alert("false");
+  ("test" + 3).length > 5 ? alert("true") : alert("false");
 }
 //??|||||||||||||||||||||||||||
 async function yopt() {
