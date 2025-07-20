@@ -217,12 +217,24 @@ Promise.reject(13).catch(console.log);
 // Promise.reject();
 increment();
 increment();
-// Відловлються помилки catch
+let pomilka;
+// Відловлються помилки catch sapytiv na server otrimanya data sminenix i t.d.
 try {
-  increment();
+  // increment();
+  // test()
+  prompt(`TRY$`);
+  //nosintaxNodata;//? step one
+  // JSON.parse(`{"error": "true"}`);
+  pomilka = JSON.parse(`{"{}`);
+  // console.log(JSON.parse(`{"{}`));
 } catch (error) {
-  console.log(error);
+  pomilka = { poymalo: "catch" };
+  alert(console.log(error,));
+  alert(console.log(error,pomilka));
+  // alert(error);
+  // prompt("catch");
 }
+//??|||||||||||||||||||||||||||
 async function yopt() {
   let ass = await Promise.resolve(11);
   // let ass = Promise.resolve(11);
@@ -252,6 +264,7 @@ function fncHoisting(parFHA, parFHB) {
   }
   return closure();
 }
+
 //?
 function alertFnc(identificator) {
   return () => {
@@ -385,6 +398,16 @@ if (0 !== 1 && 1 < 2) {
 //?CLASS
 class Template {
   static propertyField = "declaration";
+  // _protectedProperty = "nochangevalue";
+  _protectedProperty = 1;
+  #privateProperty = "privatproperty";
+  // /**
+  //  * @param {any} tru
+  //  */
+  set protectedProperty(tru) {
+    tru = 23;
+    this._protectedProperty = true;
+  }
   instance = "instance";
   instance2 = "instance2";
   instance3;
@@ -405,7 +428,7 @@ class Template {
   }
 }
 // alert(Template.prototype.methodClasu);
-let clasprot = Template.prototype.methodClasu;
+let clasprot = Template.prototype._methodClasu;
 const exemplyar = new Template(null, {});
 let template = new Template(0.3, 1.2);
 let template1 = new Template(1.2, 4.4);
@@ -413,6 +436,9 @@ let template2 = new Template(0.4, 2.6);
 console.log(template + template1 + template2);
 console.log(template, template1, template2);
 let lety = template.somebodyObjectPropertyA;
+let protect = new Template();
+// let pr = (protect._protectedProperty = '???');
+let pr = (protect._protectedProperty = 2553);
 typeof Template;
 let KlassExpression = class NamedClass {
   constructor() {
@@ -473,9 +499,72 @@ Animal.prototype.addedNewPpropertyOnlyToConstructor =
   "addedNewPpropertyOnlyToConstructor";
 const Doggie = new Animal("Jeff", "Dog");
 const constructorr = new Animal("bober", "kurva");
-//
-
+//?inheritance
+class Dog extends Animal {
+  constructor(name, species) {
+    super(name, species);
+  }
+}
+// Dog.prototype.sayName = function () {//?sho popalo
+//   alert(Dog);
+// };
+// class Exetends extends alert("exetends evrybody something function") {}//?return mistytsja v funccii()
+// new Exetends.length;
+// const dogg = new Dog("Bob", "Dog");
+// dogg.sayName();
+class StaticClass {
+  static staticMethod() {
+    alert("staticMethod");
+  }
+}
+class Krol {
+  constructor(imya) {
+    this.skorost = 0.5; //?this OBOWJASKOWO TRWEBA
+    this.im = imya;
+    // this.schos = "N";
+    this.schos = "N";
+  }
+  bigi(skorost) {
+    this.skorost = skorost;
+    alert(` ${this.im} begi to move zi shwidkistyu ${this.skorost}`);
+  }
+  stojati() {
+    this.skorost = 0;
+    alert(` ${this.im} stoyat PARENT  ${this.schos}`);
+  }
+}
+class Saya extends Krol {
+  showawsya() {
+    alert(` ${this.im} showawsya`);
+  }
+  nestojati() {
+    super.stojati();
+    this.showawsya();
+  }
+  // notArrow()=>super.stojati(){//?arorw function not hat super
+  //   this.showawsya();
+  // }
+}
+// new Krol("Berserk").bigi(35);
+// new Krol("Gandalf").stojati('"Stojat"');
+// let saya = new Saya("Saya");
+// saya.showawsya();
+// saya.stojati();
+// saya.nestojati();
+// let newkrol = new Krol("Mordor");
+// vsyaki funcii
+class OVRRIDDING extends Krol {
+  constructor(imya, skorost, schos) {
+    super(imya, skorost, schos);
+    this.im = imya;
+    this.schos = skorost;
+  }
+}
+let ovrridding = new OVRRIDDING("Perevisnachennja", "Schos", null, 123);
+//////
 let cls = fncHoisting();
+
+// alert(obj instanceof Rabbit);
 ////let globalVar = 12.2;
 var globalVar = 12.2;
 console.log(globalVar);
@@ -1643,7 +1732,9 @@ let {
 //// obj.name = "HOISTING-Vasya";
 ////let obj = new Object();
 //// const obj = new Object();
+let dinnamic = "dinamoc";
 const obj = {
+  [dinnamic]: "dinnamicvalue",
   key: "value",
   name: "Oleksandr",
   age: 30,
