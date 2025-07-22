@@ -8,6 +8,9 @@ var vaR = 1.01;
 let vaiable = "string";
 let number = "num11.5";
 const constanta = "constanta";
+const apiUrl = fetch("https://api.exchangerate-api.com/v4/latest/USD");
+fetch("https://api.exchangerate-api.com/v4/latest/USD")
+  .then((response) => response.json())
 constanta.match(/s/);
 console.log(vaR instanceof test);
 console.log(vaR instanceof Number);
@@ -222,23 +225,30 @@ let pomilka;
 try {
   // increment();
   // test()
-  prompt(`TRY$`);
+  // prompt(`TRY$`);
   //nosintaxNodata;//? step one
   // JSON.parse(`{"error": "true"}`);
   pomilka = JSON.parse(`{"{}`);
   // console.log(JSON.parse(`{"{}`));
 } catch (error) {
   pomilka = { poymalo: "catch" };
-  alert(console.log(error,));
-  alert(console.dir(error,));
-  alert(console.log(error,pomilka));
+  // alert(console.log(error,));
+  // alert(console.dir(error,));
+  // alert(console.log(error,pomilka));
   // alert(error);
   // prompt("catch");
-}
-finally {
-  prompt("finally AFTER RETURN");
-  // String!=Number ? alert("true") : alert("false");
-  ("test" + 3).length > 5 ? alert("true") : alert("false");
+} finally {
+  // let prmt = prompt("finally AFTER RETURN", 5);
+  let nul = null;
+  // /* String==Number*/ 4 < 5 ? alert(`true=${prmt}`) : alert(`alert${prmt}`);
+  // ("test" + 3).length > 5 ? alert("true") : alert("false");
+  // confirm(`wwid = ${prmt}`);
+  // if (confirm("Pidte?")) {
+    // nul = prompt(`enter ${somaray}`);
+    // alert("Pidte");
+  // } else {
+    // alert("Nepidte");
+  // }
 }
 //??|||||||||||||||||||||||||||
 async function yopt() {
