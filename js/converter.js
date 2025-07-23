@@ -3,14 +3,16 @@
 // fetch("https://jsonplaceholder.typicode.com/todos/1")
 //   .then((response) => response.json())
 //   .then((json) => console.log(json));
+let addGitHub = "newUrlWnda";
 // ?ASYNCHRONOUS,jQuery|jQuery-AJAX,asynchronous-function,callback,promise,async|await,...
 var vaR = 1.01;
 let vaiable = "string";
 let number = "num11.5";
 const constanta = "constanta";
 const apiUrl = fetch("https://api.exchangerate-api.com/v4/latest/USD");
-fetch("https://api.exchangerate-api.com/v4/latest/USD")
-  .then((response) => response.json())
+fetch("https://api.exchangerate-api.com/v4/latest/USD").then((response) =>
+  response.json()
+);
 constanta.match(/s/);
 console.log(vaR instanceof test);
 console.log(vaR instanceof Number);
@@ -244,10 +246,10 @@ try {
   // ("test" + 3).length > 5 ? alert("true") : alert("false");
   // confirm(`wwid = ${prmt}`);
   // if (confirm("Pidte?")) {
-    // nul = prompt(`enter ${somaray}`);
-    // alert("Pidte");
+  // nul = prompt(`enter ${somaray}`);
+  // alert("Pidte");
   // } else {
-    // alert("Nepidte");
+  // alert("Nepidte");
   // }
 }
 //??|||||||||||||||||||||||||||
